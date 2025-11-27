@@ -1,6 +1,6 @@
 {
   "name": "contextbricks",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Real-time context tracking with brick visualization for Claude Code CLI",
   "keywords": [
     "claude",
