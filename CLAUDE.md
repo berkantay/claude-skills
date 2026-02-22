@@ -15,7 +15,7 @@ Production workflow skills for Claude Code CLI. Each skill guides Claude through
 
 ```
 claude-skills/
-├── skills/                         # All skills (24)
+├── skills/                         # All skills (25)
 │   ├── skill-creator/              # Foundation: create new skills (Anthropic official)
 │   ├── cloudflare-worker-builder/  # Scaffold Cloudflare Worker projects
 │   ├── vite-flare-starter/         # Full-stack Cloudflare app from starter template
@@ -29,6 +29,7 @@ claude-skills/
 │   ├── web-design-methodology/     # Universal web design implementation (BEM, responsive, a11y)
 │   ├── web-design-patterns/        # Heroes, cards, CTAs, trust signals, testimonials
 │   ├── seo-local-business/         # SEO setup for local businesses (JSON-LD, meta, sitemap)
+│   ├── code-review-ai-navigation/  # Audit HTML for AI agent navigability + accessibility
 │   ├── google-chat-messages/       # Google Chat webhooks (text, cards, threads)
 │   ├── google-apps-script/         # Google Sheets Apps Script automation
 │   ├── elevenlabs-agents/          # Build ElevenLabs voice agents
