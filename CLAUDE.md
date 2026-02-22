@@ -15,7 +15,7 @@ Production workflow skills for Claude Code CLI. Each skill guides Claude through
 
 ```
 claude-skills/
-├── skills/                         # All skills (24)
+├── skills/                         # All skills (25)
 │   ├── skill-creator/              # Foundation: create new skills (Anthropic official)
 │   ├── cloudflare-worker-builder/  # Scaffold Cloudflare Worker projects
 │   ├── vite-flare-starter/         # Full-stack Cloudflare app from starter template
@@ -38,6 +38,7 @@ claude-skills/
 │   ├── ux-audit/                   # UX walkthroughs and QA sweeps via browser automation
 │   ├── github-release/             # Sanitize and publish GitHub releases
 │   ├── gemini-peer-review/         # Second opinion from Gemini on code/architecture
+│   ├── code-logic-review/          # Review code for logic, requirements, maintainability
 │   ├── claude-capabilities/        # Current Claude AI & Code capabilities reference
 │   └── aussie-business-english/    # Australian business English writing style
 ├── CLAUDE.md                       # This file
