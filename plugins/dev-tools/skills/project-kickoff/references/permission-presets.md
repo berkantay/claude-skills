@@ -12,7 +12,6 @@ Curated permission presets for `settings.local.json`. Each preset is a JSON arra
 | `WebFetch` | Blanket web fetch (all domains) |
 | `WebFetch(domain:example.com)` | Domain-scoped web fetch |
 | `WebSearch` | Blanket web search |
-| `mcp__*` | All MCP servers and tools |
 | `mcp__brain__*` | All tools on one MCP server |
 | `mcp__brain__brain_sites` | One specific MCP tool |
 
@@ -348,20 +347,9 @@ Note: `Bash(nvidia-smi)` (no wildcard) matches the bare command with no argument
 
 MCP (Model Context Protocol) servers provide tool access to external services. Permission patterns use the format `mcp__servername__toolname`.
 
-### Blanket Allow (Recommended)
+### Per-Server Wildcards (Recommended)
 
-If you trust all your connected MCP servers, use a single wildcard:
-
-```json
-"// --- All MCP Servers ---",
-"mcp__*"
-```
-
-This covers every MCP server and tool. Since you control which servers are connected (via `.mcp.json` or Claude Desktop config), this is safe for most setups.
-
-### Per-Server Wildcards
-
-For granular control, allow all tools on specific servers:
+Allow all tools on each MCP server you trust. You must list each server individually — `mcp__*` does NOT work as a blanket (the wildcard only matches within the last segment, not across the `__` boundary).
 
 ```json
 "mcp__brain__*",
