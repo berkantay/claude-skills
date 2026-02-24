@@ -45,10 +45,12 @@ claude-skills/
 │   ├── dev-tools/                          # Skill creation, context, sessions, releases
 │   │   └── skills/
 │   │       ├── skill-creator/
+│   │       ├── project-kickoff/
 │   │       ├── context-manager/
 │   │       ├── dev-session/
 │   │       ├── github-release/
 │   │       ├── gemini-peer-review/
+│   │       ├── gemini-guide/
 │   │       ├── claude-capabilities/
 │   │       └── ux-audit/
 │   ├── shopify/                            # Shopify store management
