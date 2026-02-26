@@ -137,6 +137,10 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(rsync *)",
 "Bash(dig *)",
 
+"// --- Skill Scripts ---",
+"Bash(python3 *)",
+"Bash(GEMINI_API_KEY=*)",
+
 "// --- Web ---",
 "WebSearch",
 "WebFetch"
