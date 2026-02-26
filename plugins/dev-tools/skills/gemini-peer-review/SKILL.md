@@ -10,13 +10,11 @@ Consult Gemini as a coding peer for a second opinion on code quality, architectu
 
 ## Setup
 
-**API Key**: Retrieve from Vault before first use:
+**API Key**: Set `GEMINI_API_KEY` as an environment variable. Get a key from https://aistudio.google.com/apikey if you don't have one.
 
+```bash
+export GEMINI_API_KEY="your-key-here"
 ```
-mcp__vault__secret_get name="Google Gemini"
-```
-
-Export as `GEMINI_API_KEY` for the script.
 
 ## Workflow
 

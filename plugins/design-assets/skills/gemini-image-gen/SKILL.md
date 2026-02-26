@@ -10,11 +10,10 @@ Generate contextual images for web projects using the Gemini API. Produces hero 
 
 ## Setup
 
-**API Key**: Retrieve from Vault and export:
+**API Key**: Set `GEMINI_API_KEY` as an environment variable. Get a key from https://aistudio.google.com/apikey if you don't have one.
 
-```
-mcp__vault__secret_get name="Google Gemini" folder="ai-services"
-export GEMINI_API_KEY="<key>"
+```bash
+export GEMINI_API_KEY="your-key-here"
 ```
 
 ## Workflow

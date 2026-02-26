@@ -29,7 +29,7 @@ Ask for:
 |----------|----------|
 | Project name (kebab-case) | Google OAuth credentials |
 | One-line description | Custom domain |
-| Cloudflare account (Jezweb Team or Personal) | R2 storage needed? |
+| Cloudflare account | R2 storage needed? |
 | Auth method: Google OAuth, email/password, or both | Admin email |
 
 ### Step 2: Initialise Project

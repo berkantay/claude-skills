@@ -13,7 +13,7 @@ If you don't change these, attackers can identify your site uses this starter:
 | localStorage keys | `vite-flare-starter-theme` | `VITE_APP_ID` env var |
 | API tokens | `vfs_` prefix | `VITE_TOKEN_PREFIX` env var |
 | Sentry release | `vite-flare-starter@x.x.x` | `VITE_APP_ID` env var |
-| GitHub links | jezweb repo | `VITE_GITHUB_URL` (set empty to hide) |
+| GitHub links | starter repo | `VITE_GITHUB_URL` (set empty to hide) |
 | Worker name | `vite-flare-starter` | `wrangler.jsonc` |
 | Database name | `vite-flare-starter-db` | `wrangler.jsonc` |
 | R2 buckets | `vite-flare-starter-*` | `wrangler.jsonc` |

@@ -256,7 +256,7 @@ This runs in the **main context** (not a sub-agent) because it needs access to t
 | `Bash(nvidia-smi)` | Exact match, no arguments |
 | `WebFetch` | Blanket web fetch |
 | `WebSearch` | Blanket web search |
-| `mcp__brain__*` | All tools on one MCP server |
+| `mcp__servername__*` | All tools on one MCP server |
 
 ### What Does NOT Work
 

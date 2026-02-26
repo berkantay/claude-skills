@@ -12,8 +12,8 @@ Curated permission presets for `settings.local.json`. Each preset is a JSON arra
 | `WebFetch` | Blanket web fetch (all domains) |
 | `WebFetch(domain:example.com)` | Domain-scoped web fetch |
 | `WebSearch` | Blanket web search |
-| `mcp__brain__*` | All tools on one MCP server |
-| `mcp__brain__brain_sites` | One specific MCP tool |
+| `mcp__servername__*` | All tools on one MCP server |
+| `mcp__servername__tool_name` | One specific MCP tool |
 | `Read(.claude/**)` | Read files in project's .claude/ (recursive) |
 | `Edit(~/Documents/**)` | Edit files under home Documents (recursive) |
 | `Read(//tmp/**)` | Read from absolute path (`//` = filesystem root) |
@@ -142,7 +142,6 @@ Every project gets these. Version control, file operations, and basic tools need
 
 "// --- Skill Scripts ---",
 "Bash(python3 *)",
-"Bash(GEMINI_API_KEY=*)",
 
 "// --- File Access ---",
 "Read(.claude/**)",
@@ -420,7 +419,12 @@ For AI/ML workloads. Add to any stack.
 
 "// --- GPU ---",
 "Bash(nvidia-smi *)",
-"Bash(nvidia-smi)"
+"Bash(nvidia-smi)",
+
+"// --- API Key Passthrough ---",
+"Bash(GEMINI_API_KEY=*)",
+"Bash(OPENAI_API_KEY=*)",
+"Bash(ANTHROPIC_API_KEY=*)"
 ```
 
 Note: `Bash(nvidia-smi)` (no wildcard) matches the bare command with no arguments, which is the most common usage.
@@ -436,9 +440,9 @@ MCP (Model Context Protocol) servers provide tool access to external services. P
 Allow all tools on each MCP server you trust. You must list each server individually — `mcp__*` does NOT work as a blanket (the wildcard only matches within the last segment, not across the `__` boundary).
 
 ```json
-"mcp__brain__*",
+"mcp__servername__*",
 "mcp__playwright__*",
-"mcp__vault__*"
+"mcp__another-server__*"
 ```
 
 ### Individual Tools
@@ -446,8 +450,8 @@ Allow all tools on each MCP server you trust. You must list each server individu
 For maximum control, allow specific tools only:
 
 ```json
-"mcp__brain__brain_sites",
-"mcp__brain__brain_recall"
+"mcp__servername__specific_tool",
+"mcp__servername__another_tool"
 ```
 
 ---

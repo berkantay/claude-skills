@@ -268,6 +268,20 @@ After initialization, customize or remove the generated SKILL.md and example fil
 
 When editing the (newly-generated or existing) skill, remember that the skill is being created for another instance of Claude to use. Include information that would be beneficial and non-obvious to Claude. Consider what procedural knowledge, domain-specific details, or reusable assets would help another Claude instance execute these tasks more effectively.
 
+#### Skills Must Be Self-Contained
+
+Other users who install your skill will NOT have your `~/.claude/rules/`, your `CLAUDE.md`, your MCP servers, or your Vault. Everything the skill needs must be inside the skill itself:
+
+| Don't rely on... | Instead... |
+|-------------------|-----------|
+| Your `~/.claude/rules/*.md` | Put the guidance in SKILL.md or `references/` |
+| Your project/global CLAUDE.md | Include relevant context directly in the skill |
+| Specific MCP servers (Brain, Vault, etc.) | Make MCP usage optional, or document what's needed |
+| Your `settings.local.json` permissions | Document what permissions the skill needs so users can add them |
+| Environment-specific paths or tools | Use detection logic or document prerequisites |
+
+**Test**: Could someone with a fresh Claude Code install use this skill? If it would break without your personal config, it's not self-contained.
+
 #### Learn Proven Design Patterns
 
 Consult these helpful guides based on your skill's needs:
@@ -339,8 +353,8 @@ Skills work as directories — no packaging needed. Install directly:
 # Install from this repo
 /plugin install ./skills/<skill-name>
 
-# Or add the repo as a marketplace
-/plugin marketplace add jezweb/claude-skills
+# Or add a repo as a marketplace
+/plugin marketplace add owner/repo-name
 /plugin install <bundle-name>
 ```
 

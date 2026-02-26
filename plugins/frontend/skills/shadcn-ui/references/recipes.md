@@ -303,7 +303,7 @@ export function SettingsPage() {
         <TabsContent value="general" className="space-y-6 mt-4">
           <div className="space-y-2">
             <Label htmlFor="name">Display Name</Label>
-            <Input id="name" defaultValue="Jez" />
+            <Input id="name" defaultValue="Alex" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="timezone">Timezone</Label>

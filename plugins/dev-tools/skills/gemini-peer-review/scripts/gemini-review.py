@@ -61,7 +61,7 @@ def main():
 
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        print("GEMINI_API_KEY not set. Get it from Vault: mcp__vault__secret_get name='Google Gemini'", file=sys.stderr)
+        print("GEMINI_API_KEY not set. Get a key from https://aistudio.google.com/apikey", file=sys.stderr)
         sys.exit(1)
 
     if args.prompt_file:
