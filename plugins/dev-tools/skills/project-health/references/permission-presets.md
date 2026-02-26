@@ -112,6 +112,23 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(hostname *)",
 "Bash(uptime *)",
 
+"// --- Process Management ---",
+"Bash(pkill *)",
+"Bash(lsof *)",
+"Bash(pgrep *)",
+"Bash(timeout *)",
+"Bash(ss *)",
+
+"// --- Security / Crypto ---",
+"Bash(openssl *)",
+"Bash(gitleaks *)",
+
+"// --- System Utilities ---",
+"Bash(printenv *)",
+"Bash(xxd *)",
+"Bash(base64 *)",
+"Bash(nslookup *)",
+
 "// --- Network ---",
 "Bash(curl *)",
 "Bash(wget *)",
@@ -155,10 +172,14 @@ For any JS/TS project. Add to Universal Base.
 "Bash(vite *)",
 "Bash(turbo *)",
 
+"// --- Dev Servers ---",
+"Bash(pm2 *)",
+
 "// --- Testing ---",
 "Bash(jest *)",
 "Bash(vitest *)",
 "Bash(playwright *)",
+"Bash(playwright-cli *)",
 "Bash(cypress *)",
 
 "// --- Linting / Formatting ---",
@@ -395,6 +416,60 @@ For maximum control, allow specific tools only:
 ```json
 "mcp__brain__brain_sites",
 "mcp__brain__brain_recall"
+```
+
+---
+
+## macOS
+
+macOS-specific commands. Add when developing on macOS.
+
+```json
+"// --- macOS ---",
+"Bash(brew *)",
+"Bash(open *)",
+"Bash(pbcopy *)",
+"Bash(pbpaste *)",
+"Bash(sips *)"
+```
+
+---
+
+## LLM CLIs
+
+AI/LLM command-line tools. Add when using AI assistants or review tools.
+
+```json
+"// --- LLM CLIs ---",
+"Bash(claude *)",
+"Bash(gemini-coach *)",
+"Bash(elevenlabs *)"
+```
+
+---
+
+## Firebase
+
+Google Firebase CLI. Add alongside Cloud CLIs for Firebase projects.
+
+```json
+"// --- Firebase ---",
+"Bash(firebase *)"
+```
+
+---
+
+## Media Processing
+
+Image and video processing tools. Add for projects that handle media assets.
+
+```json
+"// --- Media Processing ---",
+"Bash(convert *)",
+"Bash(identify *)",
+"Bash(ffmpeg *)",
+"Bash(ffprobe *)",
+"Bash(ffplay *)"
 ```
 
 ---
