@@ -289,6 +289,8 @@ If a skill step involves collecting data from multiple sources, scanning files, 
 
 **Rule of thumb**: If a step needs 3+ bash commands for one logical operation, it should be a script. One Write + one Bash run = 2 approvals instead of many.
 
+**Where to save**: Write scripts to `.claude/scripts/` in the project — not `/tmp`. Project scripts are part of the project's evolution and available to future sessions. Only use `/tmp` for truly disposable one-shot operations.
+
 #### Start with Reusable Skill Contents
 
 To begin implementation, start with the reusable resources identified above: `scripts/`, `references/`, and `assets/` files. Note that this step may require user input. For example, when implementing a `brand-guidelines` skill, the user may need to provide brand assets or templates to store in `assets/`, or documentation to store in `references/`.

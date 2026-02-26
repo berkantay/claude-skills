@@ -321,6 +321,8 @@ dist/
 .env.local
 .claude/settings.local.json
 .claude/plans/
+.claude/screenshots/
+.claude/artifacts/
 ```
 
 ### Python
@@ -336,6 +338,8 @@ dist/
 .DS_Store
 .claude/settings.local.json
 .claude/plans/
+.claude/screenshots/
+.claude/artifacts/
 ```
 
 ### Ops / Admin
@@ -346,6 +350,8 @@ dist/
 .env.local
 .claude/settings.local.json
 .claude/plans/
+.claude/screenshots/
+.claude/artifacts/
 ```
 
 ### PHP / WordPress
@@ -359,6 +365,8 @@ node_modules/
 .env.local
 .claude/settings.local.json
 .claude/plans/
+.claude/screenshots/
+.claude/artifacts/
 ```
 
 ### Go
@@ -372,6 +380,8 @@ bin/
 .env
 .claude/settings.local.json
 .claude/plans/
+.claude/screenshots/
+.claude/artifacts/
 ```
 
 ### Rust
@@ -383,4 +393,6 @@ Cargo.lock
 .env
 .claude/settings.local.json
 .claude/plans/
+.claude/screenshots/
+.claude/artifacts/
 ```
