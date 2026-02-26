@@ -14,6 +14,9 @@ Curated permission presets for `settings.local.json`. Each preset is a JSON arra
 | `WebSearch` | Blanket web search |
 | `mcp__brain__*` | All tools on one MCP server |
 | `mcp__brain__brain_sites` | One specific MCP tool |
+| `Read(.claude/**)` | Read files in project's .claude/ (recursive) |
+| `Edit(~/Documents/**)` | Edit files under home Documents (recursive) |
+| `Read(//tmp/**)` | Read from absolute path (`//` = filesystem root) |
 
 ### Format Notes
 
@@ -141,9 +144,34 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(python3 *)",
 "Bash(GEMINI_API_KEY=*)",
 
+"// --- File Access ---",
+"Read(.claude/**)",
+"Edit(.claude/**)",
+"Write(.claude/**)",
+"Read(//tmp/**)",
+"Edit(//tmp/**)",
+
 "// --- Web ---",
 "WebSearch",
 "WebFetch"
+```
+
+**File access patterns** use gitignore-style syntax:
+- `.claude/**` — project-relative (scripts, artifacts, screenshots)
+- `//tmp/**` — absolute path (`//` prefix = filesystem root)
+- `~/.claude/**` — home-relative (global rules, memory)
+- `~/Documents/**` — home-relative (cross-project reads)
+- `*` matches files in one directory, `**` matches recursively
+
+Add home-relative paths to **global** `~/.claude/settings.local.json` only (not per-project):
+
+```json
+"// --- Global File Access (add to ~/.claude/settings.local.json) ---",
+"Read(~/.claude/**)",
+"Edit(~/.claude/**)",
+"Read(~/Documents/**)",
+"Edit(~/Documents/**)",
+"Read(~/Downloads/**)"
 ```
 
 ---
