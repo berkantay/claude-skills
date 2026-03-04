@@ -88,6 +88,7 @@ plugin-name/
 └── skills/
     └── skill-name/
         ├── SKILL.md       # Frontmatter + instructions, under 500 lines
+        ├── ERRATA.md      # Optional: versioned corrections discovered during builds
         ├── references/    # Docs and example code loaded on demand by Claude
         └── assets/        # Files used in output (templates, images)
 ```
@@ -168,6 +169,14 @@ Before committing a skill:
 - [ ] Produces tangible output (not just reference material)
 - [ ] Tested by actually using it on a real task
 - [ ] No pre-built scripts where a pattern description would suffice
+
+## Skill Errata (ERRATA.md)
+
+When a skill's instructions are correct at one point but a library update changes behaviour, capture the correction in `ERRATA.md` alongside the SKILL.md rather than immediately rewriting the skill.
+
+**Status lifecycle**: `active` (current correction) → `absorbed` (folded into SKILL.md) → `outdated` (library changed again)
+
+Only for version-specific issues. Small typos or obvious mistakes should just be fixed in SKILL.md directly.
 
 ## Git History
 

@@ -50,12 +50,16 @@ Every project gets these. Version control, file operations, and basic tools need
 "// --- File Operations ---",
 "Bash(cd *)",
 "Bash(ls *)",
+"Bash(pwd *)",
 "Bash(cat *)",
 "Bash(head *)",
 "Bash(tail *)",
+"Bash(less *)",
+"Bash(more *)",
 "Bash(wc *)",
 "Bash(sort *)",
 "Bash(mkdir *)",
+"Bash(mktemp *)",
 "Bash(rm *)",
 "Bash(rmdir *)",
 "Bash(cp *)",
@@ -92,6 +96,7 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(printf *)",
 "Bash(tee *)",
 "Bash(cut *)",
+"Bash(paste *)",
 "Bash(tr *)",
 "Bash(uniq *)",
 "Bash(xargs *)",
@@ -106,10 +111,14 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(kill *)",
 "Bash(env *)",
 "Bash(export *)",
+"Bash(unset *)",
 "Bash(source *)",
+"Bash(bash *)",
+"Bash(sh *)",
 "Bash(date *)",
 "Bash(uname *)",
 "Bash(make *)",
+"Bash(cmake *)",
 "Bash(id *)",
 "Bash(whoami *)",
 "Bash(hostname *)",
@@ -117,14 +126,22 @@ Every project gets these. Version control, file operations, and basic tools need
 
 "// --- Process Management ---",
 "Bash(pkill *)",
+"Bash(killall *)",
 "Bash(lsof *)",
 "Bash(pgrep *)",
 "Bash(timeout *)",
+"Bash(sleep *)",
+"Bash(wait *)",
+"Bash(time *)",
+"Bash(nohup *)",
 "Bash(ss *)",
 
 "// --- Security / Crypto ---",
 "Bash(openssl *)",
+"Bash(ssh-keygen *)",
 "Bash(gitleaks *)",
+"Bash(md5sum *)",
+"Bash(shasum *)",
 
 "// --- System Utilities ---",
 "Bash(printenv *)",
@@ -194,9 +211,15 @@ For any JS/TS project. Add to Universal Base.
 "Bash(pnpm *)",
 "Bash(yarn *)",
 
+"// --- Node Version Managers ---",
+"Bash(nvm *)",
+"Bash(fnm *)",
+"Bash(volta *)",
+
 "// --- TypeScript ---",
 "Bash(tsc *)",
 "Bash(tsx *)",
+"Bash(ts-node *)",
 
 "// --- Bundlers ---",
 "Bash(esbuild *)",
@@ -333,7 +356,8 @@ Deployment preset. Add to Universal Base + JavaScript/TypeScript.
 ```json
 "// --- Wrangler ---",
 "Bash(wrangler *)",
-"Bash(npx wrangler *)"
+"Bash(npx wrangler *)",
+"Bash(miniflare *)"
 ```
 
 ---
@@ -479,7 +503,8 @@ AI/LLM command-line tools. Add when using AI assistants or review tools.
 "// --- LLM CLIs ---",
 "Bash(claude *)",
 "Bash(gemini-coach *)",
-"Bash(elevenlabs *)"
+"Bash(elevenlabs *)",
+"Bash(fastmcp *)"
 ```
 
 ---
@@ -503,9 +528,43 @@ Image and video processing tools. Add for projects that handle media assets.
 "// --- Media Processing ---",
 "Bash(convert *)",
 "Bash(identify *)",
+"Bash(exiftool *)",
 "Bash(ffmpeg *)",
 "Bash(ffprobe *)",
 "Bash(ffplay *)"
+```
+
+---
+
+## Linux System
+
+Linux server administration. Add for projects deployed on Linux or managed via SSH.
+
+```json
+"// --- Linux System ---",
+"Bash(systemctl *)",
+"Bash(journalctl *)",
+"Bash(crontab *)",
+"Bash(sudo *)",
+"Bash(apt *)",
+"Bash(apt-get *)",
+"Bash(dpkg *)",
+"Bash(yum *)",
+"Bash(dnf *)"
+```
+
+---
+
+## Mobile Development
+
+React Native, Expo, and mobile tooling. Add for mobile app projects.
+
+```json
+"// --- React Native / Expo ---",
+"Bash(eas *)",
+"Bash(npx expo *)",
+"Bash(adb *)",
+"Bash(react-native *)"
 ```
 
 ---
@@ -522,6 +581,8 @@ Presets stack. Examples:
 | WordPress plugin | Universal + PHP |
 | Rust CLI | Universal + Rust |
 | ML project | Universal + Python + AI/GPU |
+| React Native app | Universal + JavaScript/TypeScript + Mobile Development |
+| Linux server ops | Universal + Linux System + Docker |
 | Full-stack ops | Universal + JavaScript/TypeScript + Python + Docker + Database + MCP (blanket) |
 
 When merging, deduplicate and keep the grouped `//` comment structure. The final `settings.local.json` should look like:
