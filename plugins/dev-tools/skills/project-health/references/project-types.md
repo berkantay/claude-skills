@@ -6,19 +6,36 @@ Detect project type from file presence to determine which documentation files ar
 
 Check indicators in priority order (first match wins for primary type, but types can stack):
 
-| Indicator Files | Project Type |
-|----------------|-------------|
-| `wrangler.jsonc` or `wrangler.toml` | cloudflare-worker |
-| `vite.config.*` + `src/` with `.tsx` files | vite-react |
-| `vite.config.*` without React | vite-app |
-| `next.config.*` | nextjs |
-| `src/index.ts` + `FastMCP` or `McpAgent` imports | mcp-server |
-| `skills/` dir + SKILL.md files within | skills-repo |
-| `src/routes/` or `src/api/` or `app/api/` | api-project |
-| `drizzle.config.*` or `prisma/schema.prisma` or D1 bindings in wrangler | database-project |
-| `.claude/agents/` + operational scripts | claude-ops |
-| `package.json` only (generic Node) | node-project |
-| `pyproject.toml` or `setup.py` | python-project |
+| Indicator Files | Project Type | Permission Preset |
+|----------------|-------------|-------------------|
+| `wrangler.jsonc` or `wrangler.toml` | cloudflare-worker | JS/TS + Cloudflare Worker |
+| `vite.config.*` + `src/` with `.tsx` files | vite-react | JS/TS |
+| `vite.config.*` without React | vite-app | JS/TS |
+| `next.config.*` | nextjs | JS/TS + Vercel |
+| `astro.config.*` | astro | JS/TS + Static Site Generators |
+| `src/index.ts` + `FastMCP` or `McpAgent` imports | mcp-server | JS/TS |
+| `skills/` dir + SKILL.md files within | skills-repo | — |
+| `src/routes/` or `src/api/` or `app/api/` | api-project | (from parent type) |
+| `drizzle.config.*` or `prisma/schema.prisma` or D1 bindings in wrangler | database-project | Database |
+| `.claude/agents/` + operational scripts | claude-ops | — |
+| `package.json` only (generic Node) | node-project | JS/TS |
+| `pyproject.toml` or `setup.py` or `requirements.txt` | python-project | Python |
+| `Cargo.toml` | rust-project | Rust |
+| `go.mod` | go-project | Go |
+| `Gemfile` or `Rakefile` | ruby-project | Ruby |
+| `composer.json` or `wp-config.php` | php-project | PHP |
+| `pom.xml` or `build.gradle` or `build.gradle.kts` | java-project | Java/JVM |
+| `*.sln` or `*.csproj` or `global.json` | dotnet-project | .NET |
+| `mix.exs` | elixir-project | Elixir |
+| `Package.swift` | swift-project | Swift + macOS |
+| `Dockerfile` or `docker-compose.yml` | docker | Docker |
+| `fly.toml` | fly-deployment | Hosting Platforms |
+| `railway.json` or `railway.toml` | railway-deployment | Hosting Platforms |
+| `netlify.toml` | netlify-deployment | Hosting Platforms |
+| `vercel.json` | vercel-deployment | Vercel |
+| `supabase/config.toml` | supabase-project | Hosting Platforms + Database |
+| `hugo.toml` or `hugo.yaml` | hugo | Static Site Generators |
+| `pubspec.yaml` | flutter-project | Mobile Development |
 
 **Stacking**: A Cloudflare Worker with D1 bindings is both `cloudflare-worker` and `database-project`. Union the expected docs.
 

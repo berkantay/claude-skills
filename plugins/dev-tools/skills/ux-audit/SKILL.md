@@ -1,12 +1,12 @@
 ---
 name: ux-audit
-description: "Run UX walkthroughs and QA sweeps on live web apps using browser automation. Walks through apps as a real user, flags friction points and usability issues, tests CRUD operations, and produces ranked audit reports. Trigger with 'ux audit', 'ux walkthrough', 'qa test', 'test the app', or 'check all pages'."
+description: "Dogfood web apps — browse as a real user, notice friction, document findings. Adopts a user persona, tracks emotional friction (trust, anxiety, confusion), counts click efficiency, tests resilience (mid-form navigation, back button, refresh), and asks 'would I come back?'. Produces ranked audit reports. Trigger with 'ux audit', 'dogfood this', 'ux walkthrough', 'qa test', 'test the app', or 'check all pages'."
 compatibility: claude-code-only
 ---
 
 # UX Audit
 
-Walk through live web apps as a real user to find usability issues and verify functionality. Uses Chrome MCP (for authenticated apps with your session) or Playwright for browser automation. Produces structured audit reports with findings ranked by impact.
+Dogfood web apps by browsing them as a real user would — with their goals, their patience, and their context. Goes beyond "does it work?" to "is it good?" by tracking emotional friction (trust, anxiety, confusion), counting click efficiency, testing resilience, and asking the ultimate question: "would I come back?" Uses Chrome MCP (for authenticated apps with your session) or Playwright for browser automation. Produces structured audit reports with findings ranked by impact.
 
 ## Browser Tool Detection
 
@@ -22,25 +22,65 @@ See [references/browser-tools.md](references/browser-tools.md) for tool-specific
 
 ## Operating Modes
 
-### Mode 1: UX Walkthrough
+### Mode 1: UX Walkthrough (Dogfooding)
 
-**When**: "ux walkthrough", "walk through the app", "is the app intuitive?", "ux audit"
+**When**: "ux walkthrough", "walk through the app", "is the app intuitive?", "ux audit", "dogfood this"
 
-This is the highest-value mode. Instead of mechanically clicking buttons, walk through the app as a first-time user performing a realistic task.
+This is the highest-value mode. You are **dogfooding** the app — using it as a real user would, with their goals, their constraints, and their patience level. Not a mechanical checklist pass, but genuinely trying to get a job done.
 
-1. Ask the user for a **task scenario** (e.g., "I need to create a new patient and book them for surgery")
-2. Navigate to the app's entry point
-3. Attempt the task as a first-time user would — no prior knowledge of the UI
-4. At each screen, evaluate against the walkthrough checklist (see [references/walkthrough-checklist.md](references/walkthrough-checklist.md)):
-   - Is the next step obvious without thinking?
-   - Do labels and icons make sense?
-   - Is navigation discoverable?
-   - Are dangerous actions (delete, override) guarded?
-   - Is the most important information prominent?
-   - Does the result match my expectation?
-5. Take screenshots at friction points
-6. After completing (or failing) the task, compile findings into a UX audit report
-7. Write report to `docs/ux-audit-YYYY-MM-DD.md` using the template from [references/report-template.md](references/report-template.md)
+#### Step 1: Adopt a User Persona
+
+Ask the user two questions:
+- **Task scenario**: What does the user need to accomplish? (e.g., "Create a new patient and book them for surgery")
+- **Who is the user?**: What's their context? (e.g., "A busy receptionist between phone calls, on a desktop, moderate tech comfort")
+
+If the user doesn't specify a persona, adopt a reasonable default: a non-technical person who is time-poor, mildly distracted, and using this app for the first time today.
+
+#### Step 2: Approach with Fresh Eyes
+
+Navigate to the app's entry point. From here, attempt the task with **no prior knowledge of the UI**. Adopt the persona's mindset:
+- Don't use browser dev tools or read source code to figure out where things are
+- Don't assume labels mean what a developer intended — read them literally
+- If something is confusing, don't power through — note it as friction
+- If you feel uncertain about what a button will do, that's a finding
+
+#### Step 3: Evaluate Each Screen
+
+At each screen, evaluate against the walkthrough checklist (see [references/walkthrough-checklist.md](references/walkthrough-checklist.md)). Key questions to hold in mind:
+
+**Clarity**: Is the next step obvious without thinking?
+**Trust**: Do I feel confident this will do what I expect? Am I afraid I'll break something?
+**Efficiency**: How many clicks/steps is this taking? Is there a shorter path?
+**Recovery**: If I make a mistake right now, can I get back?
+**Delight vs frustration**: Would I sigh, smile, or swear at this moment?
+
+#### Step 4: Count the Cost
+
+Track the effort required to complete the task:
+- **Click count**: How many clicks from start to finish?
+- **Decision points**: How many times did I have to stop and think?
+- **Dead ends**: Did I go down a wrong path and have to backtrack?
+- **Time impression**: Does this feel fast or tedious?
+
+#### Step 5: Test Resilience
+
+After completing the main task, test what happens when things go wrong:
+- Navigate away mid-form — is data preserved?
+- Submit with missing/bad data — are error messages helpful and specific?
+- Use the back button — does the app handle it gracefully?
+- Refresh the page — does state survive?
+
+#### Step 6: Ask the Big Questions
+
+After completing (or failing) the task, reflect as the persona:
+- **Would I come back?** Or would I look for an alternative?
+- **Could I teach a colleague to use this?** In under 2 minutes?
+- **What's the one thing that would make this twice as easy?**
+
+#### Step 7: Document and Report
+
+Take screenshots at friction points. Compile findings into a UX audit report.
+Write report to `docs/ux-audit-YYYY-MM-DD.md` using the template from [references/report-template.md](references/report-template.md)
 
 **Severity levels**:
 - **Critical** — blocks the user from completing their task
@@ -113,6 +153,9 @@ Focused testing of a specific area.
 - For long QA sweeps, use the task list to track progress across pages
 - Take screenshots at key friction points — they make the report actionable
 - Run UX walkthrough before QA sweep — finding "buttons work but users are confused" is more valuable than "all buttons work"
+- Stay in persona throughout — if you catch yourself thinking "a developer would know to..." stop. The user isn't a developer.
+- Every hesitation is a finding. If you paused to figure out what to click, that's friction worth reporting.
+- The "one thing to make it twice as easy" is often the most actionable insight in the whole report
 
 ## Reference Files
 

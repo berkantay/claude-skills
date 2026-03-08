@@ -9,12 +9,25 @@ Use this template when writing audit reports to `docs/`.
 
 **Date**: YYYY-MM-DD
 **Scenario**: "[realistic task the user walked through]"
+**Persona**: "[who the user is — role, context, tech comfort, time pressure]"
 **Browser**: Chrome MCP / Playwright
 **Viewport**: Desktop (1280px) + Mobile (375px)
 
 ## Summary
 
 [2-3 sentences: overall impression, biggest concerns, what works well]
+
+## Flow Score
+
+| Metric | Value |
+|--------|-------|
+| Task completed? | Yes / No / Partially |
+| Click count | [number] |
+| Decision points (had to stop and think) | [number] |
+| Dead ends (wrong path, had to backtrack) | [number] |
+| Would come back? | Yes / Maybe / No |
+| Could teach someone in 2 minutes? | Yes / No |
+| One thing to make it twice as easy | [description] |
 
 ## Findings
 
@@ -39,6 +52,21 @@ Use this template when writing audit reports to `docs/`.
 ### Low (polish)
 
 - **[Short title]**: [description]
+
+## Emotional Friction
+
+Moments where the user felt uncertain, anxious, or frustrated:
+
+- **[Moment]**: [What happened, why it felt bad, what would feel better]
+
+## Resilience
+
+| Test | Result |
+|------|--------|
+| Navigate away mid-form | [Pass/Fail — detail] |
+| Bad input on forms | [Pass/Fail — detail] |
+| Back button behaviour | [Pass/Fail — detail] |
+| Page refresh | [Pass/Fail — detail] |
 
 ## What Works Well
 

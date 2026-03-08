@@ -89,6 +89,7 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(rg *)",
 "Bash(awk *)",
 "Bash(sed *)",
+"Bash(perl *)",
 "Bash(diff *)",
 "Bash(jq *)",
 "Bash(yq *)",
@@ -100,6 +101,7 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(tr *)",
 "Bash(uniq *)",
 "Bash(xargs *)",
+"Bash(yes *)",
 "Bash(basename *)",
 "Bash(dirname *)",
 
@@ -135,12 +137,20 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(time *)",
 "Bash(nohup *)",
 "Bash(ss *)",
+"Bash(top *)",
+"Bash(htop *)",
+"Bash(free *)",
+
+"// --- Terminal Multiplexers ---",
+"Bash(screen *)",
+"Bash(tmux *)",
 
 "// --- Security / Crypto ---",
 "Bash(openssl *)",
 "Bash(ssh-keygen *)",
 "Bash(gitleaks *)",
 "Bash(md5sum *)",
+"Bash(md5 *)",
 "Bash(shasum *)",
 
 "// --- System Utilities ---",
@@ -148,6 +158,13 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(xxd *)",
 "Bash(base64 *)",
 "Bash(nslookup *)",
+"Bash(seq *)",
+"Bash(bc *)",
+"Bash(column *)",
+"Bash(iconv *)",
+"Bash(strings *)",
+"Bash(patch *)",
+"Bash(cmp *)",
 
 "// --- Network ---",
 "Bash(curl *)",
@@ -156,6 +173,9 @@ Every project gets these. Version control, file operations, and basic tools need
 "Bash(scp *)",
 "Bash(rsync *)",
 "Bash(dig *)",
+"Bash(ping *)",
+"Bash(whois *)",
+"Bash(sshpass *)",
 
 "// --- Skill Scripts ---",
 "Bash(python3 *)",
@@ -239,7 +259,22 @@ For any JS/TS project. Add to Universal Base.
 "// --- Linting / Formatting ---",
 "Bash(eslint *)",
 "Bash(prettier *)",
-"Bash(biome *)"
+"Bash(biome *)",
+
+"// --- Build Tools ---",
+"Bash(corepack *)",
+"Bash(tsup *)",
+"Bash(swc *)",
+"Bash(rollup *)",
+"Bash(webpack *)",
+
+"// --- Monorepo ---",
+"Bash(nx *)",
+"Bash(lerna *)",
+"Bash(changeset *)",
+
+"// --- Component Dev ---",
+"Bash(storybook *)"
 ```
 
 ---
@@ -274,6 +309,13 @@ For Python projects. Add to Universal Base.
 "Bash(uvicorn *)",
 "Bash(gunicorn *)",
 "Bash(django-admin *)",
+
+"// --- Package Managers ---",
+"Bash(pdm *)",
+"Bash(hatch *)",
+
+"// --- Git Hooks ---",
+"Bash(pre-commit *)",
 
 "// --- Notebooks ---",
 "Bash(jupyter *)"
@@ -408,9 +450,22 @@ For projects that interact with databases directly. Add to any stack.
 "Bash(mysql *)",
 "Bash(sqlite3 *)",
 
+"// --- PostgreSQL Utilities ---",
+"Bash(pg_dump *)",
+"Bash(pg_restore *)",
+"Bash(createdb *)",
+"Bash(dropdb *)",
+
+"// --- MySQL Utilities ---",
+"Bash(mysqldump *)",
+
 "// --- NoSQL ---",
 "Bash(redis-cli *)",
-"Bash(mongosh *)"
+"Bash(mongosh *)",
+
+"// --- Managed Database CLIs ---",
+"Bash(turso *)",
+"Bash(pscale *)"
 ```
 
 ---
@@ -490,7 +545,19 @@ macOS-specific commands. Add when developing on macOS.
 "Bash(open *)",
 "Bash(pbcopy *)",
 "Bash(pbpaste *)",
-"Bash(sips *)"
+"Bash(sips *)",
+"Bash(screencapture *)",
+"Bash(osascript *)",
+"Bash(caffeinate *)",
+"Bash(defaults *)",
+"Bash(mdfind *)",
+"Bash(mdls *)",
+"Bash(ditto *)",
+"Bash(say *)",
+"Bash(plutil *)",
+"Bash(softwareupdate *)",
+"Bash(xcode-select *)",
+"Bash(xattr *)"
 ```
 
 ---
@@ -502,9 +569,11 @@ AI/LLM command-line tools. Add when using AI assistants or review tools.
 ```json
 "// --- LLM CLIs ---",
 "Bash(claude *)",
+"Bash(gemini *)",
 "Bash(gemini-coach *)",
 "Bash(elevenlabs *)",
-"Bash(fastmcp *)"
+"Bash(fastmcp *)",
+"Bash(apify *)"
 ```
 
 ---
@@ -531,7 +600,9 @@ Image and video processing tools. Add for projects that handle media assets.
 "Bash(exiftool *)",
 "Bash(ffmpeg *)",
 "Bash(ffprobe *)",
-"Bash(ffplay *)"
+"Bash(ffplay *)",
+"Bash(yt-dlp *)",
+"Bash(mpv *)"
 ```
 
 ---
@@ -550,7 +621,9 @@ Linux server administration. Add for projects deployed on Linux or managed via S
 "Bash(apt-get *)",
 "Bash(dpkg *)",
 "Bash(yum *)",
-"Bash(dnf *)"
+"Bash(dnf *)",
+"Bash(xdg-open *)",
+"Bash(fuser *)"
 ```
 
 ---
@@ -564,8 +637,461 @@ React Native, Expo, and mobile tooling. Add for mobile app projects.
 "Bash(eas *)",
 "Bash(npx expo *)",
 "Bash(adb *)",
-"Bash(react-native *)"
+"Bash(react-native *)",
+
+"// --- Flutter ---",
+"Bash(flutter *)",
+"Bash(dart *)",
+
+"// --- iOS ---",
+"Bash(xcodebuild *)",
+"Bash(pod *)",
+"Bash(xcrun *)",
+
+"// --- Cross-Platform ---",
+"Bash(fastlane *)"
 ```
+
+---
+
+## Java / JVM
+
+For Java, Kotlin, Scala, and other JVM projects. Add to Universal Base.
+
+```json
+"// --- Java ---",
+"Bash(java *)",
+"Bash(javac *)",
+"Bash(jar *)",
+
+"// --- Build Tools ---",
+"Bash(mvn *)",
+"Bash(gradle *)",
+"Bash(gradlew *)",
+"Bash(./gradlew *)",
+
+"// --- Kotlin ---",
+"Bash(kotlin *)",
+"Bash(kotlinc *)",
+
+"// --- Scala ---",
+"Bash(sbt *)",
+"Bash(scala *)"
+```
+
+---
+
+## .NET / C#
+
+For .NET projects. Add to Universal Base.
+
+```json
+"// --- .NET ---",
+"Bash(dotnet *)",
+"Bash(nuget *)"
+```
+
+---
+
+## Elixir
+
+For Elixir / Phoenix projects. Add to Universal Base.
+
+```json
+"// --- Elixir ---",
+"Bash(elixir *)",
+"Bash(mix *)",
+"Bash(iex *)"
+```
+
+---
+
+## Swift
+
+For Swift projects (macOS/iOS). Add to Universal Base + macOS.
+
+```json
+"// --- Swift ---",
+"Bash(swift *)",
+"Bash(swiftc *)"
+```
+
+---
+
+## Static Site Generators
+
+For static sites. Add to Universal Base + JavaScript/TypeScript (for most).
+
+```json
+"// --- Static Site Generators ---",
+"Bash(astro *)",
+"Bash(hugo *)",
+"Bash(gatsby *)",
+"Bash(eleventy *)",
+"Bash(jekyll *)"
+```
+
+---
+
+## Hosting Platforms
+
+Deployment CLIs for various hosting providers. Add to any stack.
+
+```json
+"// --- Hosting CLIs ---",
+"Bash(railway *)",
+"Bash(fly *)",
+"Bash(flyctl *)",
+"Bash(netlify *)",
+"Bash(supabase *)",
+"Bash(heroku *)",
+"Bash(render *)",
+"Bash(cpanel *)"
+```
+
+---
+
+## Tunneling / Local Dev
+
+Expose local servers, generate local certs, etc. Add to any stack.
+
+```json
+"// --- Tunneling ---",
+"Bash(ngrok *)",
+"Bash(cloudflared *)",
+
+"// --- Local HTTPS ---",
+"Bash(mkcert *)",
+"Bash(certbot *)",
+
+"// --- Cloud Storage Sync ---",
+"Bash(rclone *)"
+```
+
+---
+
+## SaaS CLIs
+
+CLI tools for common SaaS platforms. Add as needed.
+
+```json
+"// --- Payment / Communication ---",
+"Bash(stripe *)",
+"Bash(twilio *)",
+
+"// --- Auth ---",
+"Bash(auth0 *)",
+
+"// --- Monitoring ---",
+"Bash(sentry-cli *)"
+```
+
+---
+
+## Document Processing
+
+For projects that generate PDFs, convert documents, or process media.
+
+```json
+"// --- Documents ---",
+"Bash(pandoc *)",
+"Bash(wkhtmltopdf *)",
+"Bash(pdftotext *)",
+
+"// --- ImageMagick v7 ---",
+"Bash(magick *)"
+```
+
+Note: ImageMagick v6 uses `convert` (in Media Processing preset). v7 uses `magick` as the unified command.
+
+---
+
+## CI / GitHub Actions
+
+For running CI locally or managing workflows.
+
+```json
+"// --- CI ---",
+"Bash(act *)",
+
+"// --- GitHub Actions ---",
+"Bash(gh workflow *)",
+"Bash(gh run *)"
+```
+
+---
+
+## Editors / IDE CLIs
+
+For projects where Claude may interact with editor tooling.
+
+```json
+"// --- Editor CLIs ---",
+"Bash(code *)",
+"Bash(cursor *)",
+"Bash(zed *)",
+"Bash(vim *)",
+"Bash(nvim *)"
+```
+
+---
+
+## WebFetch Domains
+
+Use blanket `WebFetch` (in Universal Base) to avoid per-domain prompts. If you prefer granular control, here is a comprehensive domain-scoped list organised by category to match the Bash presets above.
+
+```json
+"// --- WebFetch (blanket — recommended) ---",
+"WebFetch"
+```
+
+### OR: Domain-Scoped (granular control)
+
+Pick the categories that match your stack.
+
+#### Core (every project)
+
+```json
+"// --- GitHub ---",
+"WebFetch(domain:github.com)",
+"WebFetch(domain:raw.githubusercontent.com)",
+"WebFetch(domain:api.github.com)",
+"WebFetch(domain:docs.github.com)",
+"WebFetch(domain:github.blog)",
+
+"// --- General Dev Reference ---",
+"WebFetch(domain:developer.mozilla.org)",
+"WebFetch(domain:stackoverflow.com)",
+"WebFetch(domain:dev.to)",
+"WebFetch(domain:medium.com)",
+"WebFetch(domain:deepwiki.com)",
+"WebFetch(domain:bundlephobia.com)",
+
+"// --- Package Registries ---",
+"WebFetch(domain:www.npmjs.com)",
+"WebFetch(domain:pypi.org)",
+"WebFetch(domain:crates.io)",
+"WebFetch(domain:pkg.go.dev)",
+"WebFetch(domain:rubygems.org)",
+"WebFetch(domain:nuget.org)"
+```
+
+#### AI / LLM
+
+```json
+"// --- Anthropic ---",
+"WebFetch(domain:docs.anthropic.com)",
+"WebFetch(domain:www.anthropic.com)",
+"WebFetch(domain:support.anthropic.com)",
+"WebFetch(domain:platform.claude.com)",
+
+"// --- Google AI ---",
+"WebFetch(domain:ai.google.dev)",
+"WebFetch(domain:cloud.google.com)",
+"WebFetch(domain:developers.google.com)",
+
+"// --- OpenAI ---",
+"WebFetch(domain:platform.openai.com)",
+"WebFetch(domain:developers.openai.com)",
+
+"// --- AI SDKs ---",
+"WebFetch(domain:ai-sdk.dev)",
+"WebFetch(domain:openrouter.ai)",
+
+"// --- ElevenLabs ---",
+"WebFetch(domain:elevenlabs.io)",
+
+"// --- MCP ---",
+"WebFetch(domain:spec.modelcontextprotocol.io)",
+"WebFetch(domain:gofastmcp.com)"
+```
+
+#### Cloudflare
+
+```json
+"WebFetch(domain:developers.cloudflare.com)",
+"WebFetch(domain:blog.cloudflare.com)",
+"WebFetch(domain:community.cloudflare.com)"
+```
+
+#### JavaScript / TypeScript Ecosystem
+
+```json
+"// --- Core ---",
+"WebFetch(domain:nodejs.org)",
+"WebFetch(domain:typescriptlang.org)",
+"WebFetch(domain:tc39.es)",
+
+"// --- React ---",
+"WebFetch(domain:react.dev)",
+"WebFetch(domain:reactnative.dev)",
+
+"// --- Build Tools ---",
+"WebFetch(domain:vitejs.dev)",
+"WebFetch(domain:vite.dev)",
+"WebFetch(domain:esbuild.github.io)",
+"WebFetch(domain:turbo.build)",
+
+"// --- UI Frameworks ---",
+"WebFetch(domain:ui.shadcn.com)",
+"WebFetch(domain:www.radix-ui.com)",
+"WebFetch(domain:tailwindcss.com)",
+"WebFetch(domain:lucide.dev)",
+
+"// --- State / Data ---",
+"WebFetch(domain:tanstack.com)",
+"WebFetch(domain:swr.vercel.app)",
+"WebFetch(domain:zustand.docs.pmnd.rs)",
+"WebFetch(domain:zod.dev)",
+"WebFetch(domain:react-hook-form.com)",
+
+"// --- Auth ---",
+"WebFetch(domain:better-auth.com)",
+"WebFetch(domain:www.better-auth.com)",
+"WebFetch(domain:clerk.com)",
+"WebFetch(domain:authjs.dev)",
+
+"// --- ORM / Database ---",
+"WebFetch(domain:orm.drizzle.team)",
+"WebFetch(domain:www.prisma.io)",
+
+"// --- API Frameworks ---",
+"WebFetch(domain:hono.dev)",
+"WebFetch(domain:expressjs.com)",
+"WebFetch(domain:fastify.dev)",
+"WebFetch(domain:trpc.io)",
+
+"// --- Testing ---",
+"WebFetch(domain:playwright.dev)",
+"WebFetch(domain:vitest.dev)",
+"WebFetch(domain:jestjs.io)",
+"WebFetch(domain:testing-library.com)",
+
+"// --- Linting ---",
+"WebFetch(domain:eslint.org)",
+"WebFetch(domain:prettier.io)",
+"WebFetch(domain:biomejs.dev)"
+```
+
+#### Python Ecosystem
+
+```json
+"WebFetch(domain:python.org)",
+"WebFetch(domain:docs.python.org)",
+"WebFetch(domain:fastapi.tiangolo.com)",
+"WebFetch(domain:docs.djangoproject.com)",
+"WebFetch(domain:flask.palletsprojects.com)",
+"WebFetch(domain:docs.pydantic.dev)",
+"WebFetch(domain:docs.pytest.org)",
+"WebFetch(domain:docs.astral.sh)"
+```
+
+#### Hosting / Deployment
+
+```json
+"WebFetch(domain:vercel.com)",
+"WebFetch(domain:docs.netlify.com)",
+"WebFetch(domain:fly.io)",
+"WebFetch(domain:docs.railway.com)",
+"WebFetch(domain:supabase.com)",
+"WebFetch(domain:render.com)",
+"WebFetch(domain:firebase.google.com)"
+```
+
+#### Static Site Generators
+
+```json
+"WebFetch(domain:astro.build)",
+"WebFetch(domain:docs.astro.build)",
+"WebFetch(domain:gohugo.io)",
+"WebFetch(domain:www.gatsbyjs.com)",
+"WebFetch(domain:www.11ty.dev)",
+"WebFetch(domain:nextjs.org)"
+```
+
+#### Database
+
+```json
+"WebFetch(domain:www.postgresql.org)",
+"WebFetch(domain:dev.mysql.com)",
+"WebFetch(domain:www.sqlite.org)",
+"WebFetch(domain:redis.io)",
+"WebFetch(domain:www.mongodb.com)",
+"WebFetch(domain:docs.turso.tech)",
+"WebFetch(domain:planetscale.com)",
+"WebFetch(domain:neon.tech)"
+```
+
+#### PHP / WordPress
+
+```json
+"WebFetch(domain:www.php.net)",
+"WebFetch(domain:developer.wordpress.org)",
+"WebFetch(domain:laravel.com)",
+"WebFetch(domain:getcomposer.org)"
+```
+
+#### SaaS / API Services
+
+```json
+"WebFetch(domain:docs.stripe.com)",
+"WebFetch(domain:www.twilio.com)",
+"WebFetch(domain:apidoc.smtp2go.com)",
+"WebFetch(domain:support.smtp2go.com)",
+"WebFetch(domain:docs.firecrawl.dev)",
+"WebFetch(domain:apify.com)",
+"WebFetch(domain:docs.sentry.io)",
+"WebFetch(domain:docs.sendgrid.com)"
+```
+
+#### Go / Rust / Ruby / Java / .NET / Elixir
+
+```json
+"WebFetch(domain:go.dev)",
+"WebFetch(domain:doc.rust-lang.org)",
+"WebFetch(domain:www.rust-lang.org)",
+"WebFetch(domain:rubyonrails.org)",
+"WebFetch(domain:ruby-doc.org)",
+"WebFetch(domain:docs.oracle.com)",
+"WebFetch(domain:spring.io)",
+"WebFetch(domain:kotlinlang.org)",
+"WebFetch(domain:learn.microsoft.com)",
+"WebFetch(domain:hexdocs.pm)",
+"WebFetch(domain:www.phoenixframework.org)"
+```
+
+#### Mobile
+
+```json
+"WebFetch(domain:reactnative.dev)",
+"WebFetch(domain:expo.dev)",
+"WebFetch(domain:flutter.dev)",
+"WebFetch(domain:dart.dev)",
+"WebFetch(domain:developer.apple.com)",
+"WebFetch(domain:developer.android.com)"
+```
+
+#### Docker / DevOps
+
+```json
+"WebFetch(domain:docs.docker.com)",
+"WebFetch(domain:kubernetes.io)",
+"WebFetch(domain:helm.sh)",
+"WebFetch(domain:www.terraform.io)",
+"WebFetch(domain:docs.github.com)"
+```
+
+#### Security / Standards
+
+```json
+"WebFetch(domain:owasp.org)",
+"WebFetch(domain:cheatsheetseries.owasp.org)",
+"WebFetch(domain:datatracker.ietf.org)",
+"WebFetch(domain:www.ietf.org)",
+"WebFetch(domain:caniuse.com)"
+```
+
+The blanket `WebFetch` is recommended for most users — domain-scoped is only needed if you want to restrict which sites Claude can fetch. Pick categories that match your stack if going granular.
 
 ---
 
@@ -577,11 +1103,22 @@ Presets stack. Examples:
 |-------------|-------------------|
 | Next.js on Vercel | Universal + JavaScript/TypeScript + Vercel |
 | Cloudflare Worker | Universal + JavaScript/TypeScript + Cloudflare Worker |
+| Astro static site | Universal + JavaScript/TypeScript + Static Site Generators |
 | Django app | Universal + Python + Database + Docker |
+| Spring Boot app | Universal + Java/JVM + Database + Docker |
+| Rails app | Universal + Ruby + Database + Docker |
+| Laravel app | Universal + PHP + Database + Docker |
+| Phoenix (Elixir) | Universal + Elixir + Database + Docker |
+| .NET API | Universal + .NET + Database + Docker |
 | WordPress plugin | Universal + PHP |
 | Rust CLI | Universal + Rust |
+| Go microservice | Universal + Go + Docker + Database |
 | ML project | Universal + Python + AI/GPU |
 | React Native app | Universal + JavaScript/TypeScript + Mobile Development |
+| Flutter app | Universal + Mobile Development |
+| iOS Swift app | Universal + Swift + macOS + Mobile Development |
+| Railway deployment | Universal + JavaScript/TypeScript + Hosting Platforms |
+| Stripe integration | Universal + JavaScript/TypeScript + SaaS CLIs |
 | Linux server ops | Universal + Linux System + Docker |
 | Full-stack ops | Universal + JavaScript/TypeScript + Python + Docker + Database + MCP (blanket) |
 

@@ -149,19 +149,27 @@ Both return summaries. The main agent combines them into one report and proposes
 
 1. **Detect project type** from files present:
 
-   | Indicator | Type |
-   |-----------|------|
-   | `wrangler.jsonc` or `wrangler.toml` | cloudflare-worker |
-   | `vercel.json` or `next.config.*` | vercel-app |
-   | `package.json` (no deploy target) | javascript-typescript |
-   | `pyproject.toml` or `setup.py` or `requirements.txt` | python |
-   | `Cargo.toml` | rust |
-   | `go.mod` | go |
-   | `Gemfile` or `Rakefile` | ruby |
-   | `composer.json` or `wp-config.php` | php |
-   | `Dockerfile` or `docker-compose.yml` | docker |
-   | `.claude/agents/` or operational scripts | ops-admin |
-   | Empty directory | Ask the user |
+   | Indicator | Type | Preset |
+   |-----------|------|--------|
+   | `wrangler.jsonc` or `wrangler.toml` | cloudflare-worker | JS/TS + Cloudflare |
+   | `vercel.json` or `next.config.*` | vercel-app | JS/TS + Vercel |
+   | `astro.config.*` | astro | JS/TS + Static Sites |
+   | `package.json` (no deploy target) | javascript-typescript | JS/TS |
+   | `pyproject.toml` or `setup.py` or `requirements.txt` | python | Python |
+   | `Cargo.toml` | rust | Rust |
+   | `go.mod` | go | Go |
+   | `Gemfile` or `Rakefile` | ruby | Ruby |
+   | `composer.json` or `wp-config.php` | php | PHP |
+   | `pom.xml` or `build.gradle*` | java | Java/JVM |
+   | `*.sln` or `*.csproj` | dotnet | .NET |
+   | `mix.exs` | elixir | Elixir |
+   | `Package.swift` | swift | Swift + macOS |
+   | `pubspec.yaml` | flutter | Mobile |
+   | `Dockerfile` or `docker-compose.yml` | docker | Docker |
+   | `fly.toml` or `railway.json` or `netlify.toml` | hosted-app | Hosting Platforms |
+   | `supabase/config.toml` | supabase | Hosting + Database |
+   | `.claude/agents/` or operational scripts | ops-admin | — |
+   | Empty directory | Ask the user | — |
 
    Types stack (e.g. cloudflare-worker + javascript-typescript).
 

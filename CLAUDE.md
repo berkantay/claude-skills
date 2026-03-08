@@ -54,6 +54,7 @@ claude-skills/
 │   │       ├── gemini-peer-review/
 │   │       ├── gemini-guide/
 │   │       ├── claude-capabilities/
+│   │       ├── team-update/
 │   │       ├── ux-audit/
 │   │       └── responsiveness-check/
 │   ├── shopify/                            # Shopify store management
