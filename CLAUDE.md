@@ -46,12 +46,12 @@ claude-skills/
 │   │       ├── google-apps-script/
 │   │       ├── elevenlabs-agents/
 │   │       └── mcp-builder/
-│   ├── dev-tools/                          # Context, sessions, releases, peer review
+│   ├── dev-tools/                          # Context, sessions, releases, brains trust
 │   │   └── skills/
 │   │       ├── project-health/
 │   │       ├── dev-session/
 │   │       ├── github-release/
-│   │       ├── gemini-peer-review/
+│   │       ├── brains-trust/
 │   │       ├── gemini-guide/
 │   │       ├── claude-capabilities/
 │   │       ├── team-update/
