@@ -480,6 +480,7 @@ For projects that interact with databases directly. Add to any stack.
 "Bash(psql *)",
 "Bash(mysql *)",
 "Bash(sqlite3 *)",
+"Bash(sqlite3 :memory:*)",
 
 "// --- PostgreSQL Utilities ---",
 "Bash(pg_dump *)",
